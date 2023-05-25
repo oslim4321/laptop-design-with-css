@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #dde2e7;
+}
+.container{
+    width: 60%;
+}
+.wrapper{
+    width: 750px;
+    padding: 25px;
+    /* height: 700px; */
+
+    border-radius: 10px;
+    background: #dde1e7;
+    box-shadow: -3px -3px 7px #ffffff73,
+                2px 2px 5px rgba(94, 104, 121,0.2)
+
+}
+.wrapper .keys{
+    display: flex;
+    justify-content: center;
+}
+.wrapper .keys input{
+    height: 50px;
+    min-width: 50px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background-color: #dde1e7;
+    box-shadow: -3px -3px 7px #ffffff73,
+    2px 2px 5px rgba(94, 104, 121,0.2);
+    margin: 10px;
+    color: grey;
+    text-transform: uppercase;
+    color: default;
+}
+.wrapper .keys input:focus{
+    font-size: 19px;
+    color: #3498db;
+    box-shadow: inset -3px -3px 7px #ffffff73,
+                inset  2px 2px 5px rgba(94, 104, 121,0.2)
+}
+.wrapper .keys input{
+    width: 60%;
+}
+.wrapper .display textarea{
+
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 2px 15px;
+    resize: none;
+    border-radius: 10px;
+    background-color: #dde1e7;
+    font-size: 20px;
+    pointer-events: none;
+    box-shadow: inset -3px -3px 7px #ffffff73,
+    inset 2px 2px 5px rgba(94, 104, 121,0.2);
+    margin-bottom: 20px;
+    transition: all 1s ease;
+}
+.wrapper .keys .capsLock{
+    width: 150px;
+}
+.wrapper .keys .clear{
+    font-size: 20px;
+    color: red;
+}
+.change{
+    text-transform: uppercase;
+}
+button{
+    padding: 15px 30px;
+    background-color: orange;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    color: white;
+}
+.display textarea.chan{
+    background-color: black;
+    
+}

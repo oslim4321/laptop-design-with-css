@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form class="wrapper">
+            <div class="display">
+                <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+            </div>
+                  <!-- FIRST KEY Rows -->
+            <div class="keys" id="keys"></div>
+
+                <!-- FIRST Second Rows -->
+            <div class="keys" id="2ndkeys"></div>
+
+             <!-- Third KEY Rows -->
+            <div class="keys" id="thiKey">
+                <input type="button" value="" class="capsLock">
+            </div>
+            <!-- forth KEY Rows -->
+            <div class="keys" id="fourKey"></div> 
+
+            <div class="keys">
+                <input class="space" type="button" value="">
+            </div>
+           
+        </form>
+    </div>
+    <button id="off">OFF</button>
+    <script>
+        let y=9
+        let arr=[1,2,3,4,5,6,7,8,9,0]
+        let key2=['q','w','e','r','t','y','u','i','o','p']
+        let key3=['a','s','d','f','g','h','j','k','l']
+        let key4=['z','x','c','v','b','n','m']
+        key=document.getElementById('keys')
+        keying2=document.getElementById('2ndkeys')
+        keying3=document.getElementById('thiKey')
+        four=document.getElementById('fourKey')
+
+        function display(){
+        for (let i = 0; i < arr.length; i++) {
+        
+        key.innerHTML+=` <input type="button" value="${arr[i]}">`
+        keying2.innerHTML+=` <input type="button" value="${key2[i]}">` 
+        }   
+        }
+        for (let i = 0; i < key3.length; i++) {
+            keying3.innerHTML+=` <input type="button" value="${key3[i]}">`  
+        }
+        for (let i = 0; i < key4.length; i++) {
+            four.innerHTML+=` <input type="button" value="${key4[i]}">`
+        }
+        display()
+    
+
+
+
+
+
+        clear=document.querySelector('.clear')
+        capsLock=document.querySelector('.capsLock')
+        textarea=document.querySelector('textarea')
+        input=document.querySelectorAll('input')
+        space=document.querySelector('.space')
+        input.forEach(element => {
+            element.addEventListener('click', ()=>{
+                //  console.log(textarea.value)
+                textarea.value+=element.value;
+                space.onclick=(()=>{
+                    textarea.value+=" "
+                })
+                clear.addEventListener('click', (e)=>{
+                  textarea.value.slice(0,-1)
+             })
+       
+            })
+           
+        });
+      
+            capsLock.addEventListener('click', ()=>{
+                  //  let get=element.value
+                  textarea.classList.toggle('change')
+        })
+        
+        textarea=document.querySelector('textarea')
+        off=document.getElementById('off')
+        off.addEventListener('click', ()=>{
+        
+            textarea.classList.add('chan')
+                off.innerHTML='on'
+           
+            input.forEach(element => {
+                element.disabled=true
+              //  element.style.display='none'
+            });
+        })
+      
+      
+    </script>
+</body>
+</html>
